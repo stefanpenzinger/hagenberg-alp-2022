@@ -6,10 +6,9 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 
 
 def decipher(text: str):
-    alpha_string = "".join(alphabet)
-    alpha_dq = deque(alphabet)
+    alpha_dq = deque(alphabet) # use deque because it supports adding to head and tail -> rotate method
 
-    for key in range(1, len(alpha_string)):
+    for key in range(1, len(alphabet)):
         alpha_dq.rotate(1)
         result = ""
 

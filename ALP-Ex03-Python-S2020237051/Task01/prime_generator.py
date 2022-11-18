@@ -5,12 +5,13 @@ def primes(start: int, stop=None):
         raise ValueError("Negative Values not allowed")
 
     if stop is None:
-        stop = 100
+        stop = 100  # default value for stop
 
     prime_list = list()
 
     if start == 2:
-        prime_list.append(start)
+        prime_list.append(start)  # 2 is the first prime number, later we see if a division with two leaves a rest
+        # with two this would fail so we check if we can already it beforehand
 
     for i in range(start, stop):
         if isPrime(i):
@@ -20,7 +21,8 @@ def primes(start: int, stop=None):
 
 
 def isPrime(number: int):
-    for i in range(2, int(number/2)):
+    for i in range(2, int(number / 2)):  # if number is not divisible by any number in range 2 - number / 2 it is a
+        # prime
         if number % i == 0:
             return False
     return True
